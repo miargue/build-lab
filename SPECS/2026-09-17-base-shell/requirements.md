@@ -68,8 +68,9 @@ future feature (the board, a real waitlist backend) builds on.
   working handover board). Future spec; the waitlist stands in until then.
 - **Real waitlist backend** — actually collecting/saving signups. Constitution
   keeps this frontend-only for now (`MISSION.md` §4: no backend, no databases).
-- **Real testimonials** — populating the social-proof placeholder with real
-  user stories.
+- **Real testimonials** — the social-proof cards on the page are fake placeholder
+  fillers (3 cards added 2026-09-18); replace with real user stories before
+  public launch.
 
 ## Design decisions (from the Founder Notebook)
 

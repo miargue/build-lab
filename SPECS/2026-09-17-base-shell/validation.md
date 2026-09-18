@@ -60,4 +60,4 @@ records what confirmed each one.
 - Real waitlist backend — signups are confirmed on-page but not saved
   (frontend-only constitution)
 - `board.html` — the true CTA destination; the waitlist stands in until built
-- Real testimonials to fill the social-proof placeholder
+- Real testimonials — the 3 cards on the page are **fake placeholder fillers** (2026-09-18); replace with real stories before public launch

@@ -52,7 +52,7 @@ Welcome to your Founder Notebook. This is the single source of truth for your st
 - **Primary Goal / Conversion Action:** "Open HandOff" — the one button a visitor clicks to try the working board immediately (matches Section 1's chosen CTA; interim target is the waitlist page, `coming-soon.html`, until the board is built)
 - **Page Sections:**
   1. **Hero Section:** Headline: "Know the shift before you walk in." (revised 2026-09-18 after peer testing; was "One glance. The whole shift.") — Subheadline: HandOff gives shift leads the whole operation in one glance — status, notes, tasks, and what needs attention — No sticky notes. No digging through Slack. No missed details that delay shipments — Primary CTA: [Open HandOff] — Hero visual: a mockup of the live board
-  2. **Social Proof / Credibility:** Headline: "Built for teams that can't afford to miss a beat." — made for 24/7 warehouse operations, where the next shift starts the exact moment yours ends — *placeholder for real testimonials/user stories*
+  2. **Social Proof / Credibility:** Headline: "Built for teams that can't afford to miss a beat." — made for 24/7 warehouse operations, where the next shift starts the exact moment yours ends — 3 placeholder testimonial cards (currently fake; replace with real stories before public launch)
   3. **Feature Highlights / Value Drivers:** Headline: "Everything the next shift needs. Nothing it doesn't." — status at a glance (green = steady, amber = watch, red = handle it) — notes in seconds, captured when it matters — no history, no clutter, just the current state
   4. **How It Works / Product Demo:** Problem: "A missed handover can delay real shipments." — Solution: "HandOff keeps the current state front and center." — outgoing lead updates the board throughout the shift — incoming lead reads the truth at a glance, no scrolling, no digging
   5. **Pricing / Tiers (Optional):** Not needed for now — prototype stays free
@@ -87,6 +87,7 @@ Welcome to your Founder Notebook. This is the single source of truth for your st
 
 | *2026-09-18* | *Hero copy revision* | *Evocative ("One glance. The whole shift.") vs. explicit (who + problem)* | *Peer testing showed the hero wasn't stating who we help or what problem we solve. New copy leads with the 20-second pitch ("Know the shift before you walk in.") and names the audience (shift leads) + the pain (sticky notes / Slack digging / missed details that delay shipments). No style, navbar, or CTA changes.* | *Done* |
 | *2026-09-18* | *Scroll-triggered reveal* | *No scroll effect vs. one subtle reveal* | *Added the one allowed scroll effect (TECH.md budget): content sections fade + rise into view via IntersectionObserver and re-trigger when scrolled back up. Gated on a `.js` flag so no-JS and `prefers-reduced-motion` users always see the content. Budget now used: 1 hero + 1 scroll + 1 micro.* | *Done* |
+| *2026-09-18* | *Testimonial placeholders* | *Empty "coming soon" card vs. fake filler testimonials vs. waiting for real stories* | *Filled the social-proof section with 3 clearly-fake placeholder testimonials so the page looks finished for peer testing. Must be replaced with real user stories before public launch (logged as a known gap in the feature spec).* | *Done* |
 
 ---
 
