@@ -28,11 +28,11 @@ records what confirmed each one.
       text, text-muted, status good/watch/urgent
 - [x] Radius tokens sm/md/lg and shadows `--shadow-soft` + `--shadow-lift`
 - [x] No hardcoded hex outside the `:root` block (tints are token-derived rgba)
-- [x] No line in `style.css` exceeds 200 chars; braces balanced (99/99)
+- [x] No line in `style.css` exceeds 200 chars; braces balanced (132/132)
 
 ### JavaScript
 - [x] `node --check script.js` passes
-- [x] Mobile-menu close + waitlist confirmation are guarded per page
+- [x] Mobile-menu close, waitlist confirmation, and scroll reveal are guarded per page
 - [x] No inline `<script>` blocks remain in either page
 
 ## Stage 2 — Live browser check
@@ -44,6 +44,12 @@ records what confirmed each one.
 - [x] Hamburger menu appears and works at mobile width (founder confirmed)
 - [x] Waitlist form validates an email and shows the on-page confirmation
 - [x] Hover lift and hero entrance play; `prefers-reduced-motion` disables them
+- [x] Section scroll-reveal triggers as sections enter view and re-triggers on
+      scroll back up (`IntersectionObserver`; threshold 0.1)
+- [x] Problem bar chart renders (3 amber bars, chart on the left); Solution
+      benefit table renders (5 rows + tinted total row); both use tokens only
+- [x] Asset links cache-busted (`style.css?v=3` / `script.js?v=3`) so a hard
+      refresh always gets current files
 - [x] Mobile-menu closes after tapping a nav link (per `script.js`)
 
 ## Stage 3 — Constitution alignment
@@ -61,3 +67,4 @@ records what confirmed each one.
   (frontend-only constitution)
 - `board.html` — the true CTA destination; the waitlist stands in until built
 - Real testimonials — the 3 cards on the page are **fake placeholder fillers** (2026-09-18); replace with real stories before public launch
+- Problem chart + Solution table numbers are **illustrative** (labelled as such on the page) — digitised for the demo, not measured data; swap for real figures if real stats are added later

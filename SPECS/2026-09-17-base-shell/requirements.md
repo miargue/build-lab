@@ -25,8 +25,9 @@ was actually built. Every drift was a deliberate founder decision, logged in
 | Animations / scroll effects / microinteractions — "`script.js` stays empty" | Motion budget applied (hero `fade-rise` entrance + hover microinteractions) and `scroll-behavior: smooth`; `script.js` now holds real JS |
 | Board page (`board.html`) — the CTA target (future) | Still not built. Instead the CTA points at a **new page that no spec had mentioned**: `coming-soon.html`, an interim waitlist page |
 
-Also: the spec promised "HTML and CSS only" — `script.js` now ships two small,
-guarded interactions (mobile-menu close; waitlist confirmation).
+Also: the spec promised "HTML and CSS only" — `script.js` now ships three small,
+guarded interactions (mobile-menu close; waitlist confirmation; scroll-triggered
+section reveal via IntersectionObserver).
 
 ## Why it matters
 
@@ -48,14 +49,20 @@ future feature (the board, a real waitlist backend) builds on.
   fonts, spacing scale, radius `sm`/`md`/`lg`, `--shadow-soft`, `--shadow-lift`.
   No hardcoded hex outside `:root` (only token-derived rgba tints).
 - **Section content + copy:** hero, problem, solution, features, social proof
-  (placeholder card), FAQ, footer — all from MISSION.md §3, using tokens only.
+  (3 placeholder testimonial cards — fake), FAQ, footer — all from MISSION.md
+  §3, using tokens only. Problem includes an illustrative amber CSS bar chart
+  (on the left) and Solution an old-way vs. HandOff benefit table — same three
+  tasks and illustrative figures across both.
 - **Motion:** `@keyframes fade-rise` hero entrance (0.6s, staggered),
   feature-card hover lift (`translateY(-4px)` + `--shadow-lift`), a
-  `prefers-reduced-motion` guard, `scroll-behavior: smooth`, and
-  `scroll-margin-top` on anchored sections for the sticky header. Within the
-  TECH.md motion budget.
+  scroll-triggered section reveal (`IntersectionObserver`, `.js`-gated so
+  no-JS / `prefers-reduced-motion` users always see content; re-triggers when
+  scrolled back up; threshold 0.1), a `prefers-reduced-motion` guard,
+  `scroll-behavior: smooth`, and `scroll-margin-top` on anchored sections for
+  the sticky header. Within the TECH.md motion budget.
 - **`script.js`:** closes the mobile hamburger menu after a nav tap; confirms a
-  valid email on the waitlist form (frontend-only).
+  valid email on the waitlist form (frontend-only); toggles the `.js` document
+  class and runs the scroll-triggered section reveal (`IntersectionObserver`).
 - **`coming-soon.html`:** branded waitlist page — headline, email form
   (`Join the waitlist`), on-page confirmation, validation, and a quiet
   `.back-link` (no competing CTA button). Both "Open HandOff" CTAs point here.
