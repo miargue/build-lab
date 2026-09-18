@@ -6,7 +6,7 @@ This is the six-stage journey from blank canvas to live startup. Each stage buil
 
 ## Current State
 
-> **Stage 5 complete.** Landing page built, live, and audited: navbar, Hero, Problem, Solution, Features, Social Proof, FAQ, and Footer; motion budget + smooth scrolling added; 5-Point Quality Audit run (CTA interpretation ratified by founder; "Open HandOff" currently lands on a frontend-only waitlist page, `coming-soon.html`). Next: Stage 6 (test, show, ship).
+> **Stage 5 complete.** Landing page built, live, and audited: navbar, Hero, Problem, Solution, Features, Social Proof, FAQ, and Footer; motion budget + smooth scrolling added; 5-Point Quality Audit run (CTA interpretation ratified by founder; "Open HandOff" currently lands on a frontend-only waitlist page, `coming-soon.html`; a subtle scroll-triggered section reveal was added per peer feedback). Next: Stage 6 (test, show, ship).
 
 ---
 

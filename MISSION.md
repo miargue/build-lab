@@ -86,6 +86,7 @@ Welcome to your Founder Notebook. This is the single source of truth for your st
 | *2026-09-18* | *Feature: Landing Page (Stage 5) — status* | *In-progress vs. complete* | *Complete: all sections, motion, navigation JS, and the interim waitlist page built, served, and audited (5-Point Audit: 0 Critical). Spec synced — SPECS/2026-09-17-base-shell/ now reflects what actually shipped.* | *Done* |
 
 | *2026-09-18* | *Hero copy revision* | *Evocative ("One glance. The whole shift.") vs. explicit (who + problem)* | *Peer testing showed the hero wasn't stating who we help or what problem we solve. New copy leads with the 20-second pitch ("Know the shift before you walk in.") and names the audience (shift leads) + the pain (sticky notes / Slack digging / missed details that delay shipments). No style, navbar, or CTA changes.* | *Done* |
+| *2026-09-18* | *Scroll-triggered reveal* | *No scroll effect vs. one subtle reveal* | *Added the one allowed scroll effect (TECH.md budget): content sections fade + rise into view via IntersectionObserver and re-trigger when scrolled back up. Gated on a `.js` flag so no-JS and `prefers-reduced-motion` users always see the content. Budget now used: 1 hero + 1 scroll + 1 micro.* | *Done* |
 
 ---
 

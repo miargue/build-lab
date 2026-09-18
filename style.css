@@ -604,6 +604,12 @@ html {
   .feature-card {
     transition: none;
   }
+  /* Reveal effect: never hide or move content for reduced-motion users */
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 /* ============================================================
@@ -706,4 +712,20 @@ html {
 
 .back-link:hover {
   color: var(--color-primary);
+}
+
+/* =============================================
+   Scroll-triggered reveal (subtle, re-triggers)
+   Content is only hidden when JS is available;
+   without JS (or with reduced motion) it stays visible.
+   ============================================= */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
 }

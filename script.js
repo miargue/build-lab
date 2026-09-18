@@ -3,6 +3,11 @@
 // Shared by index.html and coming-soon.html.
 // =============================================
 
+// Tell CSS that JavaScript is available. The reveal effect below only hides
+// and fades content when this class is present, so with no JS everything is
+// simply visible (no invisible content).
+document.documentElement.classList.add('js');
+
 // 1) Close the mobile menu after tapping a navigation link.
 //    (Only index.html has a hamburger menu; the guard keeps
 //    this harmless on other pages.)
@@ -40,5 +45,35 @@ if (waitlistForm) {
 
     waitlistForm.hidden = true;
     waitlistMessage.hidden = false;
+  });
+}
+
+// 3) Scroll-triggered reveal — the one scroll effect in the motion budget.
+//    Sections fade + rise in when they scroll into view, and the effect
+//    re-triggers when you scroll back up away from them (the class is
+//    removed again). Uses IntersectionObserver, as TECH.md says.
+const revealElements = document.querySelectorAll('.reveal');
+
+if ('IntersectionObserver' in window && revealElements.length > 0) {
+  const revealObserver = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        } else {
+          entry.target.classList.remove('is-visible');
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  revealElements.forEach(function (element) {
+    revealObserver.observe(element);
+  });
+} else {
+  // Old browsers without IntersectionObserver: never hide the content.
+  revealElements.forEach(function (element) {
+    element.classList.add('is-visible');
   });
 }
