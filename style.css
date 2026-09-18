@@ -1,0 +1,709 @@
+/*
+   =============================================
+   HandOff Design System — Mint Calm
+   Source of truth: build-lab/MISSION.md Section 2
+   Every component uses these tokens. Never
+   hardcode colors, fonts, or radii elsewhere.
+   =============================================
+*/
+:root {
+  /*
+     Colors — Mint Calm palette
+  */
+  --color-background: #F6F8F7;
+  --color-surface:    #FFFFFF;
+  --color-primary:    #0F766E;
+  --color-secondary:  #14B8A6;
+  --color-accent:     #F59E0B;
+  --color-text:       #1C2B27;
+  --color-text-muted: #5F6F6A;
+  /*
+     Status colors — kept separate from the brand palette
+  */
+  --color-status-good:   #22C55E;
+  --color-status-watch:  #F59E0B;
+  --color-status-urgent: #EF4444;
+  /*
+     Typography
+  */
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-body:    "Inter", sans-serif;
+  /*
+     Spacing scale
+  */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  16px;
+  --space-4:  24px;
+  --space-5:  32px;
+  --space-6:  48px;
+  /*
+     Border radius — three-step scale
+  */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  /*
+     Soft shadow
+  */
+  --shadow-soft: 0 2px 10px rgba(28, 43, 39, 0.08);
+  --color-primary-hover: #0b5f58;
+  --color-status-good-dark: #15803d;
+  --shadow-lift: 0 8px 20px rgba(28, 43, 39, 0.12);
+}
+
+/*
+   =============================================
+   Base Reset
+   =============================================
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/*
+   =============================================
+   Layout helpers
+   =============================================
+*/
+.container {
+  width: min(1100px, 100% - 2 * var(--space-5));
+  margin-inline: auto;
+}
+
+/*
+   =============================================
+   Navigation bar
+   =============================================
+*/
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-surface);
+  border-bottom: 1px solid rgba(28, 43, 39, 0.08);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-block: var(--space-3);
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  list-style: none;
+}
+
+.nav-links a:not(.btn) {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:not(.btn):hover {
+  color: var(--color-primary);
+}
+
+/*
+   Hamburger — hidden on desktop, shown on mobile
+*/
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+}
+
+/*
+   =============================================
+   Buttons
+   =============================================
+*/
+.btn {
+  display: inline-block;
+  padding: 0.7em 1.5em;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition:    background-color 0.2s ease,    border-color 0.2s ease,    transform 0.1s ease;
+}
+
+/*
+   Primary: teal fill, white text, soft shadow
+*/
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-hover);
+  /*
+     teal, darkened
+  */
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+.btn-lg {
+  padding: 0.85em 2em;
+  font-size: 1.05rem;
+}
+
+/*
+   Accessible focus ring for keyboard users
+*/
+a:focus-visible,.btn:focus-visible,.nav-toggle-label:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+/*
+   =============================================
+   Hero
+   =============================================
+*/
+.hero {
+  padding-block: clamp(3rem, 8vw, 5.5rem);
+  background: radial-gradient(    1200px 500px at 80% -10%,    rgba(20, 184, 166, 0.08),    transparent 60%  );
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.hero-copy h1 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  margin-bottom: var(--space-3);
+}
+
+.hero-sub {
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  color: var(--color-text-muted);
+  max-width: 32rem;
+  margin-bottom: var(--space-5);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/*
+   =============================================
+   Hero visual — board mockup (static CSS sketch)
+   =============================================
+*/
+.board-card {
+  background: var(--color-surface);
+  border: 1px solid rgba(28, 43, 39, 0.08);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: var(--space-4);
+}
+
+.board-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-3);
+}
+
+.board-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/*
+   Status pill
+*/
+.status-pill {
+  display: inline-block;
+  padding: 0.3em 0.9em;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.status-good {
+  background: rgba(34, 197, 94, 0.12);
+  color: var(--color-status-good-dark);
+}
+
+.board-section {
+  border-top: 1px solid rgba(28, 43, 39, 0.06);
+  padding-top: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.board-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+
+.board-notes,.board-tasks {
+  list-style: none;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.board-tasks li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text);
+}
+
+.check {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  flex: none;
+}
+
+.check.done {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/*
+   =============================================
+   Footer (quiet placeholder)
+   =============================================
+*/
+footer {
+  margin-top: var(--space-6);
+  padding-block: var(--space-5);
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(28, 43, 39, 0.08);
+}
+
+footer p + p {
+  margin-top: var(--space-2);
+}
+
+footer a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/*
+   =============================================
+   Responsive
+   =============================================
+*/
+/*
+   Offset anchored sections so the sticky header doesn't cover them
+*/
+section[id] {
+  scroll-margin-top: 90px;
+}
+
+@media (max-width: 860px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+  /*
+     Show hamburger, hide links until toggled
+  */
+  .nav-toggle-label {
+    display: block;
+    width: 28px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+  }
+  .nav-toggle-label span,  .nav-toggle-label span::before,  .nav-toggle-label span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--color-text);
+    border-radius: 2px;
+  }
+  .nav-toggle-label span {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .nav-toggle-label span::before {
+    top: -7px;
+  }
+  .nav-toggle-label span::after {
+    top: 7px;
+  }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+    background: var(--color-surface);
+    padding: var(--space-3) var(--space-5) var(--space-4);
+    border-bottom: 1px solid rgba(28, 43, 39, 0.08);
+  }
+  .nav-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+}
+
+/* =============================================
+   Problem Section (Roadmap Stage 5, Step 3)
+   ============================================= */
+#problem {
+  padding: var(--space-5) var(--space-4);
+  margin-top: var(--space-6);
+  color: var(--color-text);
+}
+#problem h2 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+#problem p {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* =============================================
+   Solution Section (Roadmap Stage 5, Step 3)
+   ============================================= */
+#solution {
+  padding: var(--space-5) var(--space-4);
+  margin-top: var(--space-6);
+  color: var(--color-text);
+}
+#solution h2 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+#solution p {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+#solution ul {
+  margin-top: var(--space-3);
+  padding-left: var(--space-4);
+}
+#solution li {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+
+/* =============================================
+   Features Section (Roadmap Stage 5, Step 3)
+   ============================================= */
+#features {
+  padding: var(--space-5) var(--space-4);
+  margin-top: var(--space-6);
+  color: var(--color-text);
+}
+#features h2 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+}
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+.feature-card {
+  background: var(--color-surface);
+  border: 1px solid rgba(28, 43, 39, 0.08);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: var(--space-4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
+}
+.feature-card h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+.feature-card p {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* Stack feature cards on narrow screens (< 860px) */
+@media (max-width: 860px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =============================================
+   Social Proof Section (Roadmap Stage 5, Step 3)
+   ============================================= */
+#social-proof {
+  padding: var(--space-5) var(--space-4);
+  margin-top: var(--space-6);
+  color: var(--color-text);
+}
+#social-proof h2 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+#social-proof .subcopy {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  max-width: 32rem;
+  margin-bottom: var(--space-4);
+}
+.testimonial-placeholder {
+  background: var(--color-surface);
+  border: 2px dashed rgba(20, 184, 166, 0.35);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/* =============================================
+   FAQ Section (Roadmap Stage 5, Step 3)
+   ============================================= */
+#faq {
+  padding: var(--space-5) var(--space-4);
+  margin-top: var(--space-6);
+  color: var(--color-text);
+}
+#faq h2 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+}
+.faq-item {
+  background: var(--color-surface);
+  border: 1px solid rgba(28, 43, 39, 0.08);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: var(--space-4);
+}
+.faq-item h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+.faq-item p {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* =============================================
+   Motion — Hero entrance (Stage 5, Step 4)
+   ============================================= */
+@keyframes fade-rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-copy {
+  animation: fade-rise 0.6s ease both;
+}
+.hero-visual {
+  animation: fade-rise 0.6s ease 0.15s both;
+}
+
+/* =============================================
+   Navigation — Smooth scrolling (Stage 5, Step 4)
+   ============================================= */
+html {
+  scroll-behavior: smooth;
+}
+
+/* =============================================
+   Accessibility — Reduced motion
+   ============================================= */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .hero-copy,
+  .hero-visual {
+    animation: none;
+  }
+  .feature-card {
+    transition: none;
+  }
+}
+
+/* ============================================================
+   Coming soon page (waitlist)
+   ============================================================ */
+
+.coming-soon {
+  padding-block: clamp(3rem, 10vw, 6rem);
+}
+
+.coming-soon-card {
+  max-width: 36rem;
+  margin-inline: auto;
+  background: var(--color-surface);
+  border: 1px solid rgba(28, 43, 39, 0.08);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: clamp(1.5rem, 5vw, 2.5rem);
+  text-align: center;
+}
+
+.coming-soon .eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+
+.coming-soon h1 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  line-height: 1.15;
+  color: var(--color-text);
+  margin-bottom: var(--space-3);
+}
+
+.coming-soon .subcopy {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: var(--space-4);
+}
+
+#waitlist-form {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#waitlist-form input[type="email"] {
+  flex: 1 1 200px;
+  padding: 0.7em 1em;
+  border: 1px solid rgba(28, 43, 39, 0.15);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+#waitlist-form input[type="email"]:focus {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+.waitlist-message {
+  margin-top: var(--space-3);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.coming-soon .footer-note {
+  margin-top: var(--space-4);
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 480px) {
+  #waitlist-form {
+    flex-direction: column;
+  }
+  #waitlist-form .btn {
+    width: 100%;
+  }
+}
+
+/* Quiet back link on the coming-soon header — not a button,
+   so it never competes with the waitlist CTA. */
+.back-link {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: var(--color-primary);
+}

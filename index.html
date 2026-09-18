@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HandOff — Know the shift before you walk in.</title>
+
+  <!-- Google Fonts: Space Grotesk (headings) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================
+       Navigation bar (Roadmap Stage 5, Step 2)
+       ============================================ -->
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="#hero" class="logo">HandOff</a>
+
+      <!-- Checkbox hack: opens/closes the mobile menu with no JavaScript -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu">
+        <span></span>
+      </label>
+
+      <ul class="nav-links">
+        <li><a href="#problem">Problem</a></li>
+        <li><a href="#solution">Solution</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li>
+          <a href="coming-soon.html" class="btn btn-primary">Open HandOff</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============================================
+         Hero (Stage 5, Step 2)
+         ============================================ -->
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+
+        <!-- Left: message + CTA -->
+        <div class="hero-copy">
+          <h1>Know the shift before you walk in.</h1>
+          <p class="hero-sub">
+            HandOff gives shift leads the whole operation in one glance —
+            status, notes, tasks, and what needs attention. No sticky notes.
+            No digging through Slack. No missed details that delay shipments.
+          </p>
+          <div class="hero-actions">
+            <a href="coming-soon.html" class="btn btn-primary btn-lg">Open HandOff</a>
+          </div>
+        </div>
+
+        <!-- Right: static CSS mockup of the live board -->
+        <div class="hero-visual">
+          <div class="board-card">
+            <div class="board-card-head">
+              <span class="board-title">Current Shift</span>
+              <span class="status-pill status-good">Steady</span>
+            </div>
+
+            <div class="board-section">
+              <span class="board-label">Notes</span>
+              <ul class="board-notes">
+                <li>Trailer 14 unloaded — 11:30</li>
+                <li>Conveyor B running slow, monitoring</li>
+              </ul>
+            </div>
+
+            <div class="board-section">
+              <span class="board-label">Outstanding</span>
+              <ul class="board-tasks">
+                <li><span class="check done"></span>Rebin 3</li>
+                <li><span class="check"></span>Pallet audit</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Landing page sections -->
+    <section id="problem">
+      <div class="container">
+        <h2>Problem</h2>
+        <p>A missed handover can delay real shipments. Sticky notes, Slack threads, and verbal handoffs leave details scattered — and in a warehouse, the person who walks in blind is the one who can't find the urgent item.</p>
+      </div>
+    </section>
+
+    <section id="solution">
+      <div class="container">
+        <h2>Solution</h2>
+        <p>HandOff keeps the current state of the shift front and center. The outgoing lead updates the board throughout the shift, whenever something matters. The incoming lead reads the truth at a glance — no scrolling, no digging, no guesswork.</p>
+        <ul>
+          <li><strong>Status at a glance</strong> — green means steady, amber means watch, red means handle it</li>
+          <li><strong>Notes in seconds</strong> — capture the important detail the moment it happens</li>
+          <li><strong>No history, no clutter</strong> — just the current state, exactly where you expect it</li>
+        </ul>
+      </div>
+    </section>
+    <section id="features">
+      <div class="container">
+        <h2>Everything the next shift needs. Nothing it doesn't.</h2>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h3>Status at a glance</h3>
+            <p>Green means steady, amber means watch, red means handle it — the whole shift, one look.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Notes in seconds</h3>
+            <p>Capture the important detail the moment it happens, from anywhere on the floor.</p>
+          </div>
+          <div class="feature-card">
+            <h3>No history, no clutter</h3>
+            <p>Just the current state of the shift, exactly where you expect to find it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="social-proof">
+      <div class="container">
+        <h2>Built for teams that can't afford to miss a beat.</h2>
+        <p class="subcopy">Made for 24/7 warehouse operations, where the next shift starts the exact moment yours ends.</p>
+        <!-- Placeholder: real testimonials / user stories go here -->
+        <div class="testimonial-placeholder">
+          <p>Real testimonials coming soon — your team's story could be the first one.</p>
+        </div>
+      </div>
+    </section>
+    <section id="faq">
+      <div class="container">
+        <h2>FAQ</h2>
+        <div class="faq-item">
+          <h3>How is this better than Slack or a shared doc?</h3>
+          <p>It's one page with the current state always on top. No chat threads to scroll, no document to dig through — just the truth about the shift, free from noise, ready in seconds.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>HandOff — Know the shift before you walk in.</p>
+    <p class="footer-note">Free for your first shift. <a href="#hero">Back to top</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
