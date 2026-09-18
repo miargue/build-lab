@@ -65,7 +65,7 @@ if ('IntersectionObserver' in window && revealElements.length > 0) {
         }
       });
     },
-    { threshold: 0.15 }
+    { threshold: 0.1 }
   );
 
   revealElements.forEach(function (element) {
