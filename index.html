@@ -13,7 +13,7 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="style.css?v=2" />
+  <link rel="stylesheet" href="style.css?v=3" />
 </head>
 <body>
 
@@ -94,20 +94,79 @@
     <!-- Landing page sections -->
     <section id="problem">
       <div class="container reveal">
-        <h2>Problem</h2>
-        <p>A missed handover can delay real shipments. Sticky notes, Slack threads, and verbal handoffs leave details scattered — and in a warehouse, the person who walks in blind is the one who can't find the urgent item.</p>
+        <div class="side-by-side">
+          <div>
+            <h2>Problem</h2>
+            <p>A missed handover can delay real shipments. Sticky notes, Slack threads, and verbal handoffs leave details scattered — and in a warehouse, the person who walks in blind is the one who can't find the urgent item.</p>
+          </div>
+          <div class="chart">
+            <h3 class="chart-title">Minutes lost per handover — the old way</h3>
+            <div class="chart-item">
+              <span class="chart-label">Catching up</span>
+              <div class="chart-track"><div class="chart-bar chart-bar-worry" style="width: 75%"></div></div>
+              <span class="chart-value">18 min</span>
+            </div>
+            <div class="chart-item">
+              <span class="chart-label">Finding the urgent item</span>
+              <div class="chart-track"><div class="chart-bar chart-bar-worry" style="width: 38%"></div></div>
+              <span class="chart-value">9 min</span>
+            </div>
+            <div class="chart-item">
+              <span class="chart-label">Face-to-face recap</span>
+              <div class="chart-track"><div class="chart-bar chart-bar-worry" style="width: 50%"></div></div>
+              <span class="chart-value">12 min</span>
+            </div>
+            <p class="chart-note">Illustrative times from a typical night-shift handover.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="solution">
       <div class="container reveal">
-        <h2>Solution</h2>
-        <p>HandOff keeps the current state of the shift front and center. The outgoing lead updates the board throughout the shift, whenever something matters. The incoming lead reads the truth at a glance — no scrolling, no digging, no guesswork.</p>
-        <ul>
-          <li><strong>Status at a glance</strong> — green means steady, amber means watch, red means handle it</li>
-          <li><strong>Notes in seconds</strong> — capture the important detail the moment it happens</li>
-          <li><strong>No history, no clutter</strong> — just the current state, exactly where you expect it</li>
-        </ul>
+        <div class="side-by-side">
+          <div>
+            <h2>Solution</h2>
+            <p>HandOff keeps the current state of the shift front and center. The outgoing lead updates the board throughout the shift, whenever something matters. The incoming lead reads the truth at a glance — no scrolling, no digging, no guesswork.</p>
+            <ul>
+              <li><strong>Status at a glance</strong> — green means steady, amber means watch, red means handle it</li>
+              <li><strong>Notes in seconds</strong> — capture the important detail the moment it happens</li>
+              <li><strong>No history, no clutter</strong> — just the current state, exactly where you expect it</li>
+            </ul>
+          </div>
+          <table class="benefit-table">
+            <caption>Same three handover tasks, one shift — with HandOff</caption>
+            <thead>
+              <tr>
+                <th scope="col">Task</th>
+                <th scope="col">Old way</th>
+                <th scope="col">With HandOff</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Catching up</th>
+                <td>18 min</td>
+                <td class="cell-happy">3 min</td>
+              </tr>
+              <tr>
+                <th scope="row">Finding the urgent item</th>
+                <td>9 min</td>
+                <td class="cell-happy">1 min</td>
+              </tr>
+              <tr>
+                <th scope="row">Face-to-face recap</th>
+                <td>12 min</td>
+                <td class="cell-happy">0 min</td>
+              </tr>
+              <tr class="benefit-table-total">
+                <th scope="row">Per shift</th>
+                <td>39 min</td>
+                <td class="cell-happy">4 min</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
     <section id="features">
@@ -185,6 +244,6 @@
     <p class="footer-note">Free for your first shift. <a href="#hero">Back to top</a></p>
   </footer>
 
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>

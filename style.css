@@ -781,3 +781,142 @@ html {
   opacity: 1;
   transform: none;
 }
+
+/* =============================================
+   Problem & Solution visuals (bar chart + table)
+   ============================================= */
+
+.side-by-side {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.chart {
+  background: var(--color-surface);
+  border: 1px solid rgba(28, 43, 39, 0.08);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: var(--space-4);
+}
+
+.chart-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: var(--space-4);
+}
+
+.chart-item {
+  display: grid;
+  grid-template-columns: 150px 1fr 54px;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.chart-label {
+  font-size: 0.85rem;
+  color: var(--color-text);
+}
+
+.chart-track {
+  height: 10px;
+  background: rgba(28, 43, 39, 0.08);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.chart-bar {
+  height: 100%;
+  border-radius: var(--radius-sm);
+}
+
+.chart-bar-worry {
+  background: var(--color-accent);
+}
+
+.chart-value {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text);
+  text-align: right;
+}
+
+.chart-note {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0;
+}
+
+.benefit-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--color-surface);
+  border: 1px solid rgba(28, 43, 39, 0.08);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.benefit-table caption {
+  text-align: left;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid rgba(28, 43, 39, 0.08);
+}
+
+.benefit-table th,
+.benefit-table td {
+  text-align: left;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid rgba(28, 43, 39, 0.06);
+  font-size: 0.9rem;
+}
+
+.benefit-table thead th {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.benefit-table tbody th {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.benefit-table tbody tr:last-child th,
+.benefit-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.cell-happy {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.benefit-table-total {
+  background: rgba(34, 197, 94, 0.12);
+}
+
+.benefit-table-total th,
+.benefit-table-total td {
+  font-weight: 700;
+}
+
+@media (max-width: 860px) {
+  .side-by-side {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-item {
+    grid-template-columns: 110px 1fr 48px;
+  }
+}
